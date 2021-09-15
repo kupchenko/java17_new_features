@@ -40,4 +40,14 @@ public class TextBlocks {
                 </body>
             </html>
             """;
+
+    public static void main(String[] args) {
+        String multilineText = """
+                1234
+                1234
+                """;
+        long count = multilineText.chars().filter(value -> value != '\n').count();
+        assert count == 8; // Without new line Characters
+        assert multilineText.length() == 10; // With new line Characters
+    }
 }
